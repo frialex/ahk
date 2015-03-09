@@ -116,7 +116,7 @@ Ctrl & h::
     }
     if  layer = d
     {
-     Send +{Left}{Backspace}
+     Send {Backspace}
     }
     if   layer = s
     {
@@ -139,7 +139,7 @@ Ctrl & l::
     }
     if  layer = d
     {
-     Send +{Right}{Backspace}
+     Send {Delete}
     }
     if   layer = s
     {
