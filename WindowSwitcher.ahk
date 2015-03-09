@@ -46,11 +46,3 @@ RunOrActivateTrayTipOff:
 	SetTimer, RunOrActivateTrayTipOff, off
 	TrayTip
 Return
-
-
-
-
-F4 & v::RunOrActivate("C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe", "Microsoft Visual")
-F4 & c::RunOrActivate("C:\Users\falexan3\AppData\Local\Google\Chrome\Application\chrome.exe", "Google Chrome")
-F4 & i::RunOrActivate("C:\Program Files (x86)\Vim\vim74\gvim.exe", "VIM")
-

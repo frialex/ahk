@@ -18,26 +18,40 @@
 ;;Ctrl + Alt + r => Reload Script
 ^!r::Reload
 
-
 ;;Layers
-;;m = Movement (single, ctrl, home, end) (History)
-;;a = Application (selection, window sizing, tab selection)
-;;d = deletion (single, ctrl)
-;;s = selection (single, ctrl)
+OFF         = 0
 ;;o = Off
+MOVEMENT    = 1
+;;m = Movement (single, ctrl, home, end) (History)
+APP         = 2
+;;a = Application (selection, window sizing, tab selection)
+DELETE      = 3
+;;d = deletion (single, ctrl)
+SELECT      = 4
+;;s = selection (single, ctrl)
+
 
 ;;set movment by default
 layer=m
 
 SC163::
-InputBox, layer, What layer do you want to activate?,
-keywait, SC163
+    InputBox, layer, What layer do you want to activate?,
+    keywait, SC163
 return
 
-Ctrl & '::InputBox, layer, What layer do you want to activate?,
-Ctrl & a::
-    layer=m
+Ctrl & `::
+    InputBox, layer, What layer do you want to activate?
 return
+
+Ctrl & '::
+    if layer = m
+    {
+        layer = a
+    } else {
+        layer = m
+    }
+return
+
 
 
 Ctrl & j::
@@ -155,14 +169,14 @@ Ctrl & p::
     if layer=a
     {
         RunOrActivate("powershell.exe")
-        layer = m
+        layer = o
     }
 return
 Ctrl & o::
     if layer=a
     {
         RunOrActivate("C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE", "Microsoft Outlook")
-        layer = m
+        layer = o
     }
 return
 
@@ -170,15 +184,15 @@ Ctrl & v::
     if layer=a
     {
         RunOrActivate("C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe", "Microsoft Visual")
-        layer = m
+        layer = o
     }
 return
 
 Ctrl & c::
-    if layer=c
+    if layer=a
     {
         RunOrActivate("C:\Users\falexan3\AppData\Local\Google\Chrome\Application\chrome.exe", "Google Chrome")
-        layer = m
+        layer = o
     }
 return
 
@@ -186,6 +200,6 @@ Ctrl & i::
     if layer=a
     {
         RunOrActivate("C:\Program Files (x86)\Vim\vim74\gvim.exe", "VIM")
-        layer = m
+        layer = o
     }
 return
