@@ -55,97 +55,92 @@ return
 
 
 Ctrl & j::
-    if  layer=m
+    if          layer=m
     {
      Send {Down}
     }
-    if  layer = a
+    else if     layer = a
     {
      Send #{Down}
     }
-    if  layer = d
+    else if     layer = d
     {
      Send +{Down}{Backspace}
     }
-    if   layer = s
+    else if     layer = s
     {
      Send +{Down}
     }
-    if layer = o
+    else
     {
      Send ^{j}
     }
 return
 
-
 Ctrl & k::
-    if layer = m
+    if      layer = m
     {
      Send {Up}
     }
-
-    if layer = a
+    else if layer = a
     {
      Send #{Up}
     }
-
-    if layer = d
+    else if layer = d
     {
      Send +{Up}{Backspace}
     }
-
-    if layer = s
+    else if layer = s
     {
      Send +{Up}
     }
-    if layer = o
+    else
     {
      Send ^{k}
     }
 return
 
-
 Ctrl & h::
-    if  layer=m
+    if          layer=m
     {
      Send {Left}
     }
-    if  layer = a
+    else if     layer = a
     {
      Send #{Left}
     }
-    if  layer = d
+    else if     layer = d
     {
      Send {Backspace}
     }
-    if   layer = s
+    else if     layer = s
     {
      Send +{Left}
     }
-    if layer = o
+    else
     {
      Send ^{h}
     }
 return
 
 Ctrl & l::
-    if  layer=m
+    if          layer=m
     {
      Send {Right}
     }
-    if  layer = a
+    else if     layer = a
     {
      Send #{Right}
     }
-    if  layer = d
+    else if     layer = d
     {
      Send {Delete}
     }
-    if   layer = s
+    else if     layer = s
     {
      Send +{Right}
     }
-    if layer = o
+    else
     {
      Send ^{l}
     }
@@ -156,12 +151,66 @@ Ctrl & a::
     {
         Send {Home}
     }
+    else if layer = s
+    {
+        Send +{Home}
+    }
+    else
+    {
+        Send ^{a}
+    }
 return
 
 Ctrl & e::
-    if layer = m
+    if      layer = m
     {
         Send {End}
+    }
+    else if layer = s
+    {
+        Send +{End}
+    }
+    else
+    {
+        Send ^{e}
+    }
+return
+
+Ctrl & b::
+    if      layer = m
+    {
+        Send ^{Left}
+    }
+    else if layer = s
+    {
+        Send ^+{Left}
+    }
+    else if layer = d
+    {
+        Send ^{Backspace}
+    }
+    else
+    {
+        Send ^{b}
+    }
+return
+
+Ctrl & f::
+    if layer = m
+    {
+        Send ^{Right}
+    }
+    else if layer = s
+    {
+        Send ^+{Right}
+    }
+    else if layer = d
+    {
+        Send ^{Delete}
+    }
+    else
+    {
+        Send ^{f}
     }
 return
 
@@ -171,12 +220,20 @@ Ctrl & p::
         RunOrActivate("powershell.exe")
         layer = o
     }
+    else
+    {
+        Send ^{p}
+    }
 return
 Ctrl & o::
     if layer=a
     {
         RunOrActivate("C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE", "Microsoft Outlook")
         layer = o
+    }
+    else
+    {
+        Send ^{o}
     }
 return
 
@@ -186,6 +243,10 @@ Ctrl & v::
         RunOrActivate("C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe", "Microsoft Visual")
         layer = o
     }
+    else
+    {
+        Send ^{v}
+    }
 return
 
 Ctrl & c::
@@ -194,6 +255,10 @@ Ctrl & c::
         RunOrActivate("C:\Users\falexan3\AppData\Local\Google\Chrome\Application\chrome.exe", "Google Chrome")
         layer = o
     }
+    else
+    {
+        Send ^{c}
+    }
 return
 
 Ctrl & i::
@@ -201,5 +266,9 @@ Ctrl & i::
     {
         RunOrActivate("C:\Program Files (x86)\Vim\vim74\gvim.exe", "VIM")
         layer = o
+    }
+    else
+    {
+        Send ^{i}
     }
 return
