@@ -52,6 +52,22 @@ Ctrl & '::
     }
 return
 
+RShift & a::
+    layer = a
+return
+RShift & d::
+    layer = d
+return
+RShift & s::
+    layer = s
+return
+RShift & q::
+    layer = o
+return
+RShift & LShift::
+    layer = m
+return
+
 
 
 Ctrl & j::
