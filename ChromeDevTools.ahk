@@ -9,22 +9,12 @@
 ;AHK doesn't wait until a second key is received 
 
 
-;;Tab Movement
-;;F2::F2
-;;F2 & h:: Send ^+{Tab}
-;;F2 & l:: Send ^{Tab}
-;;F2 & m:: Send ^{1}    ;;go to the first tab (main tab)
-
-;;History Movement
-^j:: Send !{Left}
-^k:: Send !{Right}
-
 ;;Dev tools
 ;Console Hide
-^a:: Send {Esc}
+;^a:: Send {Esc}
 
 ;Toggle Devtools
-^d:: Send ^+{j}
+;^d:: Send ^+{j}
 
 
 #IfwinActive

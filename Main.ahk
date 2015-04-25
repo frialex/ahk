@@ -13,6 +13,7 @@
 ;;Ensure that #IfWin is on top in each file
 #include ChromeDevTools.ahk
 #include Explorer.ahk
+;#include Powershell.ahk
 
 
 ;;Ctrl + Alt + r => Reload Script
@@ -39,18 +40,7 @@ SC163::
     keywait, SC163
 return
 
-Ctrl & `::
-    InputBox, layer, What layer do you want to activate?
-return
 
-Ctrl & '::
-    if layer = m
-    {
-        layer = a
-    } else {
-        layer = m
-    }
-return
 
 RShift & a::
     layer = a
@@ -230,10 +220,34 @@ Ctrl & f::
     }
 return
 
+; Scroll Up
+Ctrl & u::
+    if layer = m
+    {
+        Send {PgUp}
+    }
+return
+
+; Scroll Down
+Ctrl & d::
+    if layer = m
+    {
+        Send {PgDn}
+    }
+return
+
+;;TODO: State Navigation 
+;;Ctrl & <::
+;;Proxy this to the running application
+;;chrome => History back
+;;powershell => cd ..
+;;vs => last place on edit location stack
+;;return
+
 Ctrl & p::
     if layer=a
     {
-        RunOrActivate("powershell.exe")
+        RunOrActivate("powershell_ise.exe")
         layer = o
     }
     else
@@ -269,6 +283,7 @@ Ctrl & c::
     if layer=a
     {
         RunOrActivate("C:\Users\falexan3\AppData\Local\Google\Chrome\Application\chrome.exe", "Google Chrome")
+        RunOrActivate("C:\Users\falexan3\AppData\Local\Google\Chrome\Application\chrome.exe", "Developer Tools")
         layer = o
     }
     else
