@@ -31,10 +31,10 @@ DELETE      = 3
 SELECT      = 4
 ;;s = selection (single, ctrl)
 
-
 ;;set movment by default
 layer=m
 
+;;fn key on lenovo laptops
 SC163::
     InputBox, layer, What layer do you want to activate?,
     keywait, SC163
@@ -107,7 +107,7 @@ Ctrl & k::
 return
 
 Ctrl & h::
-    if          layer=m
+    if          layer = m
     {
      Send {Left}
     }
@@ -152,7 +152,7 @@ Ctrl & l::
     }
 return
 
-Ctrl & a::
+Ctrl & 0::
     if layer = m
     {
         Send {Home}
@@ -163,11 +163,11 @@ Ctrl & a::
     }
     else
     {
-        Send ^{a}
+        Send ^{0}
     }
 return
 
-Ctrl & e::
+Ctrl & $::
     if      layer = m
     {
         Send {End}
@@ -178,7 +178,7 @@ Ctrl & e::
     }
     else
     {
-        Send ^{e}
+        Send ^{$}
     }
 return
 
@@ -236,7 +236,7 @@ Ctrl & d::
     }
 return
 
-;;TODO: State Navigation 
+;;TODO: State Navigation
 ;;Ctrl & <::
 ;;Proxy this to the running application
 ;;chrome => History back
@@ -301,5 +301,13 @@ Ctrl & i::
     else
     {
         Send ^{i}
+    }
+return
+
+;;This is mapped to the difficult Shift + F10 on windows
+Ctrl & '::
+    if layer=m
+    {
+        Send {AppsKey}
     }
 return
