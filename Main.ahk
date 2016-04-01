@@ -1,10 +1,3 @@
-;; # Windows
-;; ! Alt
-;; ^ Control
-;; + Shift
-;; & combine two keys
-;; http://ahkscript.org/docs/Hotkeys.htm
-
 #include WindowSwitcher.ahk
 
 #include Vim-Global.ahk
