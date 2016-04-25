@@ -1,0 +1,3 @@
+~alt::
+    ChangeToInsertMode()
+return
