@@ -15,13 +15,13 @@ r::
     }
     else if MODE=MOVEMENT
     {
-        ChangeToInsertMode()
+        ;ChangeToInsertMode()
 
         Send {AppsKey}
 
-        Input, L, L1        ;;wait for a single keypress(L1) and save that key to L variable
+        ;Input, L, L1        ;;wait for a single keypress(L1) and save that key to L variable
         ;;MsgBox You pressed %L%
-        Send  %L%   ;;Resend that key through the alt-space menu
+        ;Send  %L%   ;;Resend that key through the alt-space menu
 
         ChangeToMovementMode()
     }
