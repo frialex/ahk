@@ -19,7 +19,11 @@ f::
     }
     else if MODE=DELETE
     {
-        ;do nothing
+        Send ^{Right}
+        Sleep 10
+        Send ^+{Left}
+        Sleep 10
+        Send {Delete}
     }
     else if MODE=APP
     {

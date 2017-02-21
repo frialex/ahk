@@ -15,7 +15,7 @@ s::
     }
     else if MODE=MOVEMENT
     {
-        ;;Send {Home}
+        ChangeToSelectMode()
     }
     else if MODE=DELETE
     {

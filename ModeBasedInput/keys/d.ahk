@@ -19,7 +19,12 @@ d::
     }
     else if MODE=DELETE
     {
-        ;do nothing
+        ;Delete a word behind the cursor.  F key acts as opposite
+        Send ^{Left}
+        Sleep 10
+        Send ^+{Right}
+        Sleep 10
+        Send {Delete}
     }
     else if MODE=APP
     {

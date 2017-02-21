@@ -15,9 +15,23 @@ MODE := "MOVEMENT"
 #SingleInstance Force
 #Persistent
 
+SendMode Input
+
+
 SplashTextOn, , , Loading Modal Based Keys
 Sleep 1000
 SplashTextOff
+
+
+SetTimer, WatchCaret, 100
+return
+WatchCaret:
+    IfNotEqual, MODE, APP
+    {
+        ToolTip, %MODE%
+    }
+return
+
 
 
 #include menu.ahk
@@ -27,23 +41,23 @@ SplashTextOff
 #include RunOrActivate.ahk
 #include menu_handlers.ahk
 
-;;Adding Suspend to these key bindings so they will still be
-;;in effect when DisableModalMode suspends all keybindings
-^-::
-    Suspend
-    DisableModalMode()
-    Menu, ApplicationSwitcherMenu, Show
-return
+;;This is available for some quick and frequently used action!
+;RShift & Space::
+    ;Suspend
+    ;ChangeToInsertMode()
+;return
 
 LShift & Space::
     Suspend
-    DisableModalMode()
-    Menu, ModeMenu, Show
+    ;;DisableModalMode()
+    ;;Menu, ModeMenu, Show
+    ChangeToMovementMode()
 return
 
+;;Using different mapping from <c-_> to ensure that windows+arrow keys can be used via hjkl
 LShift & RShift::
-    Suspend
-    ChangeToMovementMode()
+    ;;DisableModalMode()
+    ChangeToApplicationMode()
 return
 
 RShift & i::
@@ -51,18 +65,21 @@ RShift & i::
     ChangeToInsertMode()
 return
 
-;;Using different mapping from <c-_> to ensure that windows+arrow keys can be used via hjkl
-RShift & Space::
-    Suspend
-    DisableModalMode()
-    ChangeToApplicationMode()
+RShift & d::
+    ChangeToDeleteMode()
 return
+
+RShift & s::
+    ChangeToSelectMode()
+return
+
 
 ;; not sure why this wont work => ::ui::Menu, MenuMode, Show
 
 #include keys/a.ahk
 #include keys/b.ahk
 #include keys/c.ahk
+#include keys/d.ahk
 #include keys/e.ahk
 #include keys/f.ahk
 #include keys/g.ahk

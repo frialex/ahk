@@ -64,10 +64,18 @@ ChangeToApplicationMode()
 {
     global
     MODE := "APP"
+    
+    SplashTextON, , , "MENU MODE"
+    Sleep 300
+    SplashTextOff
 
-    Suspend Off
-    Menu, ApplicationSwitcherMenu, Show
+    ToolTip, "[V=Vim] [P=Powershell] [O=OneNote] [S=VisualStudio] [C=Chrome]"
+
+    ;Suspend Off
+    ;Keybord shortcuts for the menu does not work...
+    ;Menu, ApplicationSwitcherMenu, Show
 }
+
 ;;this uses the binding in x.ahk file to trigger application switch
 ChangeToApplicationModeNoMenu()
 {

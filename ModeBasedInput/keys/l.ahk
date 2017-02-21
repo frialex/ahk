@@ -19,7 +19,10 @@ l::
     }
     else if MODE=DELETE
     {
-        ;do nothing
+        ;Delete a single charactor in front of the cursor
+        Send {Right}
+        Sleep 20
+        Send {BackSpace}
     }
     else if MODE=APP
     {

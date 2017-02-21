@@ -19,7 +19,8 @@ h::
     }
     else if MODE=DELETE
     {
-        ;do nothing
+        ;Delete a single charactor behind the cursor
+        Send {Backspace}
     }
     else if MODE=APP
     {
