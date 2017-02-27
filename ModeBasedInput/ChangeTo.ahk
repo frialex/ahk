@@ -3,48 +3,36 @@ ChangeToInsertMode()
 {
     global
     MODE := "INSERT"
+    TTX := 80
 
     Suspend Off
-
-    SplashTextON, , , INSERT MODE
-    Sleep 100
-    SplashTextOff
 }
 
 ChangeToSelectMode()
 {
     global
     MODE := "SELECT"
+    TTX := 100
 
     Suspend Off
-
-    SplashTextOn, , , "SELECT MODE"
-    Sleep 100
-    SplashTextOff
 }
 
 ChangeToMovementMode()
 {
     global
     MODE := "MOVEMENT"
+    TTX := 50
 
     Suspend Off
-
-    SplashTextOn, , , "MOVEMENT MODE"
-    Sleep 100
-    SplashTextOff
 }
 
 ChangeToDeleteMode()
 {
     global
     MODE := "DELETE"
+    TTX := 120
 
     Suspend Off
-
-    SplashTextOn, , , "DELETE MODE"
-    Sleep 100
-    SplashTextOff
 }
 
 DisableModalMode()
@@ -53,9 +41,6 @@ DisableModalMode()
     MODE := "OFF"
 
     Suspend On
-
-    ;SplashTextOn, , , "DISABLING KEYHOOKS"
-    ;SplashTextOff
 }
 
 
@@ -64,16 +49,13 @@ ChangeToApplicationMode()
 {
     global
     MODE := "APP"
+    TTX := 140
     
     SplashTextON, , , "MENU MODE"
     Sleep 300
     SplashTextOff
 
     ToolTip, "[V=Vim] [P=Powershell] [O=OneNote] [S=VisualStudio] [C=Chrome]"
-
-    ;Suspend Off
-    ;Keybord shortcuts for the menu does not work...
-    ;Menu, ApplicationSwitcherMenu, Show
 }
 
 ;;this uses the binding in x.ahk file to trigger application switch

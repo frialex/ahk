@@ -12,7 +12,7 @@ a::
     }
     else if MODE=MOVEMENT
     {
-        ChangeToApplicationModeNoMenu()
+        ChangeToApplicationMode()
     }
     else if MODE=DELETE
     {

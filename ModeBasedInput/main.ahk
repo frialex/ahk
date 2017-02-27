@@ -1,16 +1,10 @@
+;;TODO: Need to keep mode per application
+
+
 ;APP, MOVEMENT, DELETE, SELECT, INSERT, OFF
 MODE := "MOVEMENT"
 
-;;TODO: after alt+space menu is requested, disable key binding,
-;;      and after a key is pressed put in Movement mode
 
-;;TODO: Need a faster way to switch between modes.
-        ;;opening the menu causes applicatons to acknolodge
-        ;;the keypress, and that causes state problems
-
-;;TODO: need key for right click and alt+space menu
-
-;;TODO: Need to keep mode per application
 
 #SingleInstance Force
 #Persistent
@@ -22,13 +16,15 @@ SplashTextOn, , , Loading Modal Based Keys
 Sleep 1000
 SplashTextOff
 
+TTX := 110
+TTY := 10
 
-SetTimer, WatchCaret, 100
+SetTimer, WatchCaret, 40
 return
 WatchCaret:
     IfNotEqual, MODE, APP
     {
-        ToolTip, %MODE%
+        ToolTip, %MODE%, TTX, TTY
     }
 return
 
@@ -48,20 +44,19 @@ return
 ;return
 
 LShift & Space::
-    Suspend
-    ;;DisableModalMode()
-    ;;Menu, ModeMenu, Show
     ChangeToMovementMode()
 return
 
-;;Using different mapping from <c-_> to ensure that windows+arrow keys can be used via hjkl
 LShift & RShift::
-    ;;DisableModalMode()
+    Send {Esc}
+    ;ChangeToApplicationMode()
+return
+
+RShift & a::
     ChangeToApplicationMode()
 return
 
 RShift & i::
-    Suspend
     ChangeToInsertMode()
 return
 
@@ -74,7 +69,6 @@ RShift & s::
 return
 
 
-;; not sure why this wont work => ::ui::Menu, MenuMode, Show
 
 #include keys/a.ahk
 #include keys/b.ahk
