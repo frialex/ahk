@@ -1,5 +1,17 @@
 #UseHook
 
+
+RShift & k::
+
+    GetKeyState, shouldDelete, RShift
+    if shouldDelete = D
+    {
+        ;MsgBox deleting the next charactor (RShift is %shouldDelete%)
+        Send {Delete}
+    }
+
+return
+
 k::
     if MODE=OFF
     {

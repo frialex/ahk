@@ -1,6 +1,18 @@
 #UseHook
 SendMode Input
 
+;; Cant use an if in the j:: block bellow because capital J key does not send shift with it..
+RShift & j::
+
+    GetKeyState, shouldDelete, RShift
+    if shouldDelete = D
+    {
+        ;MsgBox deleting the last charactor back (%shouldDelete%)
+        Send {Backspace}
+    }
+
+return
+
 j::
     if MODE=OFF
     {
