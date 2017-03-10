@@ -15,7 +15,7 @@ n::
     }
     else if MODE=MOVEMENT
     {
-        ;Send {Home}
+        Send {PgDn}
     }
     else if MODE=DELETE
     {

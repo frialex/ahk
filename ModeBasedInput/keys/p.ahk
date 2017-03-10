@@ -15,7 +15,7 @@ p::
     }
     else if MODE=MOVEMENT
     {
-        ;;Send {Home}
+        Send {PgUp}
     }
     else if MODE=DELETE
     {
