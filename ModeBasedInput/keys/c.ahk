@@ -23,6 +23,6 @@ c::
     }
     else if MODE=APP
     {
-        RunOrActivate("C:\Users\falexan3\AppData\Local\Google\Chrome\Application\chrome.exe", "Google Chrome")
+        ActivateChrome()
     }
 return

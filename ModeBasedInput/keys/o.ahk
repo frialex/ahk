@@ -23,6 +23,6 @@ o::
     }
     else if MODE=APP
     {
-        RunOrActivate("C:\Program Files (x86)\Microsoft Office\Office15\ONENOTE.EXE")
+        ActivateOneNote()
     }
 return

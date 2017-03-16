@@ -36,6 +36,7 @@ return
 
 #include RunOrActivate.ahk
 #include menu_handlers.ahk
+#include Applications.ahk
 
 ;;This is available for some quick and frequently used action!
 ;RShift & Space::

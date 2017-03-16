@@ -23,6 +23,6 @@ m::
     }
     else if MODE=APP
     {
-        ;;TODO: Active OneNote
+        ;do nothing
     }
 return

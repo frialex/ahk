@@ -24,6 +24,6 @@ v::
     }
     else if MODE=APP
     {
-        RunOrActivate("C:\Program Files (x86)\Vim\vim74\gvim.exe", "VIM")
+        ActivateVIM()
     }
 return

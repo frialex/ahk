@@ -23,6 +23,6 @@ p::
     }
     else if MODE=APP
     {
-        RunOrActivate("powershell_ise.exe")
+        ActivatePowershell()
     }
 return

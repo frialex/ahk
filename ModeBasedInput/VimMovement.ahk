@@ -28,3 +28,6 @@ return
         Send +{Home}
     }
 return
+
+;;Capital "v" should be select line
+;;"v" should be "change to selection mode"
