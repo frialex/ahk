@@ -15,7 +15,7 @@ u::
     }
     else if MODE=MOVEMENT
     {
-        ;;Send {Home}
+        Send ^#{Left}
     }
     else if MODE=DELETE
     {
